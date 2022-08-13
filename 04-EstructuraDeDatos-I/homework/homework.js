@@ -13,12 +13,41 @@ Secuencia:  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
 Como ejercicio adicional y completamente opcional, al terminar de resolver este problema pueden intentar definir funciones que logren los mismos resultados pero de manera iterativa.
 */
+/*
+function nFactorial(n) {
+  for(let i = n - 1; i >= 1; i--){
+    n = n * i;
+  }
+  return n;
+}
+*/
 
 function nFactorial(n) {
+if (n === 0 || n === 1){
+  return 1;
+} if (n < 0){
+  return "ERROR";
+} if (n % 1 !== 0){
+  return "ERROR";
+} 
+
+return n * nFactorial(n-1);
+
 }
 
+
+
+
+
 function nFibonacci(n) {
+  if( n < 0) return "Error: ingresar solo numeros positivos";
+  if (n===0) return 0;
+  if(n%1 !==0) return "Error: no se puede hacer fibonacci de numeros enteros";
+  if (n===1 || n===2) return 1;
+  
+  return nFibonacci(n-2) + nFibonacci(n-1);
 }
+
 
 /*
 Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde el primer elemento que ingresa es el primero que se quita. Definir los siguientes métodos:
@@ -30,8 +59,19 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
-
-}
+  this.array = []
+ 
+  Queue.prototype.enqueue = function(valor) {
+     this.array.push(valor);
+  }
+  Queue.prototype.dequeue = function() {
+ return this.array.shift();
+  
+ }
+ Queue.prototype.size = function() {
+  return this.array.length;
+ }
+ }
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
