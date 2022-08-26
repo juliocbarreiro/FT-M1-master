@@ -17,6 +17,17 @@ Crear un método `repeatify` que este disponible para _todos_ los objetos `Strin
 
 ```javascript
 console.log('hola'.repeatify(3));   //holaholahola
+
+String.prototype.repeatify = function repeatify(num){
+    if(num == 0){
+        return "´´";
+    }
+    var str = "" + this;
+    
+		return str.repeat(num)
+} 
+
+
 ```
 
 ### Shapes
@@ -37,7 +48,24 @@ Probá tu solución con el siguiente código:
 // 6
 > t.getType();
 // "Triangle"
-```
+
+const shape = {
+    type:Triangle,
+    getType: function getType(){
+        console.log(type)
+    }
+    }
+
+Triangle.prototype.shape = function(a, b, c){
+this.a = a;
+this.b = b;
+this.c = c;  
+};
+
+Shape.prototype.getPerimeter = function(){    
+};
+
+
 
 * Ahora creá un nuevo constructor que herede de `shape`, llamado `Circle`. Implementalo de tal modo que puedas calcular su perímetro en la función `getPerimeter`.
 

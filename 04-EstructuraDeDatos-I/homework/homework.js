@@ -60,7 +60,7 @@ Pueden utilizar class o función constructora.
 
 function Queue() {
   this.array = []
- 
+}
   Queue.prototype.enqueue = function(valor) {
      this.array.push(valor);
   }
@@ -71,7 +71,13 @@ function Queue() {
  Queue.prototype.size = function() {
   return this.array.length;
  }
- }
+ 
+
+ var pedidoCarlos = new Queue();
+ pedidoCarlos.enqueue("jamon");
+
+ var pedidoPepe = new Queue();
+ pedidoPepe.enqueue("morron");
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
